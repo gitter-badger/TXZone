@@ -174,32 +174,34 @@ if($admincheck!=0){
 			<h2>Admin Panel</h2>
 			</center>
 			<li><center><a>Users</a></center></li>
-			<li><a href="#">Withdraw history</a></li>
-			<li><a href="#">Completed Tasks</a></li>
-			<li><a href="#">Ban</a></li>
-			<li><a href="#">Android App</a></li>
-			<li><a href="#">Statistics</a></li>
+			<li><a href="#" id="title">Withdraw history</a></li>
+			<li><a href="#" id="title">Completed Tasks</a></li>
+			<li><a href="#" id="title">Ban</a></li>
+			<li><a href="#" id="title">Mobile App</a></li>
+			<li><a href="#" id="title">Statistics</a></li>
 			<li><center><a>Server</a></center></li>
-			<li><a href="/admin">Status</a></li>
-			<li><a href="#">Withdraw</a></li>
-			<li><a href="#">Deposit</a></li>
-			<li><a href="#">Finance Log</a></li>
-			<li><a href="#">Administrators</a></li>
+			<li><a href="/admin" id="title">Status</a></li>
+			<li><a href="#" id="title">Withdraw</a></li>
+			<li><a href="#" id="title">Deposit</a></li>
+			<li><a href="#" id="title">Finance Log</a></li>
+			<li><a href="/admin/server/adminlist.php" id="title">Administrators</a></li>
 			<li><center><a>Settings</a></center></li>
-			<li><a href="#">Api Acess</a></li>
-			<li><a href="#">My Account</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="/logout">Logout</a></li>
+			<li><a href="#" id="title">Api Acess</a></li>
+			<li><a href="#" id="title">My Account</a></li>
+			<li><a href="#" id="title">About</a></li>
+			<li><a href="/logout" id="title">Logout</a></li>
 		</ul>
 		
 	</div>
 	
 	<div id="content">
 	 
-	<center><h2>Logged in as <?php echo $_SESSION["sess_user"];?></h2></center>
-	<h1>Withdraw Status:</h1>
+	<center><h1>Control Pannel</h1></center>
+	<center>
+	<h2>Admin <?php echo $_SESSION["sess_user"];?></h2>
+	<h2>Withdraw Status:</h2>
 	<form action="" method="POST">
-	<h2>
+	<h3>
 	<?PHP
 			$withdraw = mysql_query("SELECT * FROM webcontrol WHERE name='payment'");
 			$withdrawstat = mysql_fetch_assoc($withdraw);
@@ -215,9 +217,9 @@ if($admincheck!=0){
 				
 			}
 	?>
-	</h2>
-	<h1>Deposit Status:</h1>
-	<h2>
+	</h3>
+	<h2>Deposit Status:</h2>
+	<h3>
 	<?PHP
 				$deposit = mysql_query("SELECT * FROM webcontrol WHERE name='deposit'");
 			$depositstat = mysql_fetch_assoc($deposit);
@@ -233,27 +235,27 @@ if($admincheck!=0){
 				
 			}
 	?>
-	</h2>
-	<h1>Withdraw Account Balance:</h1>
-	<h2>
+	</h3>
+	<h2>Withdraw Account Balance:</h2>
+	<h3>
 	<?PHP
 		$withdrawbalance = mysql_query("SELECT * FROM webcontrol WHERE name='withdrawabalance'");
 		$withdrawbal = mysql_fetch_assoc($withdrawbalance);
 		echo $withdrawbal['value']." satoshi";
 		echo '<input type="submit" value="Sync with BlockChain" name="withdrawupdate" id="Button" />';
 	?>
-	</h2>
-	<h1>Deposit Account Balance:</h1>
-	<h2>
+	</h3>
+	<h2>Deposit Account Balance:</h2>
+	<h3>
 	<?PHP
 		$withdrawbalance = mysql_query("SELECT * FROM webcontrol WHERE name='depositbalance'");
 		$withdrawbal = mysql_fetch_assoc($withdrawbalance);
 		echo $withdrawbal['value']." satoshi";
 		echo '<input type="submit" value="Sync with BlockChain" name="depositupdate" id="Button" />';
 	?>
-	</h2>
-	<h1>Api Status:</h1>
-	<h2>
+	</h3>
+	<h2>Mobile app Status:</h2>
+	<h3>
 	<?PHP
 				$deposit = mysql_query("SELECT * FROM webcontrol WHERE name='api'");
 			$depositstat = mysql_fetch_assoc($deposit);
@@ -267,8 +269,9 @@ if($admincheck!=0){
 				
 			}
 	?>
-	</h2>
+	</h3>
 	</form>
+	</center>
 	</div>
 	</div>
 </body>
@@ -276,12 +279,12 @@ if($admincheck!=0){
 <?php
 if(isset($_POST["api1"])){
 					echo '<script language="javascript">';
-					echo 'alert("Api Comming Soon")';
+					echo 'alert("Mobile App Comming Soon")';
 					echo '</script>';
 }
 if(isset($_POST["api0"])){
 					echo '<script language="javascript">';
-					echo 'alert("Api Comming Soon")';
+					echo 'alert("Mobile App Comming Soon")';
 					echo '</script>';
 }
 if(isset($_POST["withdrawupdate"])){

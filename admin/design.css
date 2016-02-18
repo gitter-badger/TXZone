@@ -85,7 +85,6 @@ ul li:hover{
 	
 	opacity: 1;
 	filter: alpha(opacity=100);
-	background:#1C1E1F;
 	color:#e6e6e6;
 	border-bottom:1px solid #111;
 	display:block;
@@ -103,4 +102,8 @@ ul li:hover{
 			left: 200px;
 	
 }
-
+#title {
+	
+		background:#131414;
+	
+}
