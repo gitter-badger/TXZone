@@ -1,4 +1,6 @@
 # TXZone
+
+[![Join the chat at https://gitter.im/ZenJB/TXZone](https://badges.gitter.im/ZenJB/TXZone.svg)](https://gitter.im/ZenJB/TXZone?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Hello World,
 
           This is a new website Advertising project that enables users to win Bitcoins by seeing websites.
